@@ -3,6 +3,7 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
+import Rooms.gunslinger;
 
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[5][5];
+		Room[][] building = new Room[4][4];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -28,6 +29,9 @@ public class Runner {
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
+		int a = (int)(Math.random()*building.length);
+		int b = (int)(Math.random()*building.length);
+		building[a][b] = new gunslinger(a, b);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
